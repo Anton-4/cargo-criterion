@@ -20,9 +20,9 @@ name = "test_benchmark_non_criterion"
 harness = false
 
 [dev-dependencies]
-tch = "0.1.7"
+tch = "0.2.1"
 bencher = "0.1.5"
-criterion = "0.3.3"
+criterion = { git = "https://github.com/Anton-4/criterion.rs" }
 tempfile = "3.1"
 walkdir = "2"
 bstr = "0.2"

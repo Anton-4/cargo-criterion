@@ -3,6 +3,7 @@ use std::collections::HashSet;
 use std::io::stdout;
 use std::io::Write;
 use std::path::{Path, PathBuf};
+use std::process::Stdio;
 use std::process::{Command, Output};
 use tempfile::tempdir;
 use walkdir::WalkDir;
@@ -240,6 +241,8 @@ impl AssertionState {
             self.assert_file_exists(&report_dir, "pdf_small.svg");
             self.assert_file_exists(&report_dir, "relative_pdf_small.svg");
             self.assert_file_exists(&report_dir, "typical.svg");
+            self.assert_file_exists(&report_dir, "history.svg");
+            self.assert_file_exists(&report_dir, "history.html");
 
             if self.does_exist(&report_dir.join("regression.svg")) {
                 self.assert_file_exists(&report_dir, "both/regression.svg");

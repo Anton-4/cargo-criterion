@@ -87,14 +87,6 @@ fn linear_scale_tests(c: &mut Criterion) {
     group.finish()
 }
 
-fn zero_test(c: &mut Criterion) {
-    // Neither Criterion.rs nor cargo-criterion should panic if the benchmark takes zero time.
-    // That should never happen, but in rare cases poor benchmarks can cause that.
-    c.bench_function("forced_zero_time_test", |b| {
-        b.iter_custom(|_iters| Duration::new(0, 0))
-    });
-}
-
 // These benchmarks are used for testing cargo-criterion, so to make the tests faster we configure
 // them to run quickly. This is not recommended for real benchmarks.
 criterion_group! {
@@ -104,6 +96,6 @@ criterion_group! {
         .measurement_time(Duration::from_millis(500))
         .nresamples(2000);
     targets = special_characters, sampling_mode_tests, throughput_tests, log_scale_tests,
-        linear_scale_tests, zero_test
+        linear_scale_tests
 }
 criterion_main!(benches);
