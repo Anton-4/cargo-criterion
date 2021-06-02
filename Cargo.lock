@@ -354,8 +354,7 @@ checksum = "a170cebd8021a008ea92e4db85a72f80b35df514ec664b296fdcbb654eac0b2c"
 [[package]]
 name = "plotters"
 version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32a3fd9ec30b9749ce28cd91f255d569591cdf937fe280c312143e3c4bad6f2a"
+source = "git+https://github.com/Anton-4/plotters#d043988179b61db714ad60f678637ee145e363d3"
 dependencies = [
  "num-traits",
  "plotters-backend",
